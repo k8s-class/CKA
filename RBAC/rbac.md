@@ -25,3 +25,9 @@ kubectl create role pod-reader --verb=get --verb=list --verb=watch --resource=po
 kubectl create rolebinding jknott-pod-reader --role=pod-reader --user=jknott --namespace=ns1
 kubectl get pods -n ns1 --as=jknott
 ```
+
+# Test
+```sh
+kubectl auth can-i get pods --as jknott --namespace ns1
+Yes
+```
